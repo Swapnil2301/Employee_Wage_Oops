@@ -2,13 +2,11 @@ public class Employee_wage {
 
     int FULL_TIME_EMP = 1;
     int PART_TIME_EMP = 2;
-    int EMP_RATE_PER_HOUR = 20;
     int EMP_FULLTIME_WORK_HOUR = 8;
     int EMP_PARTTIME_WORK_HOUR = 4;
-    int EMP_WORK_DAYS = 20;
-    int EMP_WORK_HOUR = 100;
 
-    public int calculateEmployeeWage(){
+
+    public int calculateEmployeeWage(String company,int EMP_RATE_PER_HOUR,int EMP_WORK_DAYS,int EMP_WORK_HOUR){
 
         int emp_wage = 0;
         int total_wage = 0;
@@ -40,7 +38,10 @@ public class Employee_wage {
 
     public static void main(String[] args) {
 
-        Employee_wage emp = new Employee_wage();
-        System.out.println(emp.calculateEmployeeWage());
+        Employee_wage emp1 = new Employee_wage();
+        System.out.println(emp1.calculateEmployeeWage("Samsung", 300, 25, 195));
+
+        Employee_wage emp2 = new Employee_wage();
+        System.out.println(emp2.calculateEmployeeWage("Apple",500, 28, 250));
     }
 }
