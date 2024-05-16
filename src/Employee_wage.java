@@ -1,5 +1,5 @@
 class CompanyEmpWage{
-
+//commit
     String company;
     int EMP_RATE_PER_HOUR;
     int EMP_WORK_DAYS;
