@@ -1,5 +1,11 @@
-class CompanyEmpWage{
-//commit
+ interface InnerEmployee_Wage_Oops {
+    public void addCompany(String company,int EMP_RATE_PER_HOUR,int EMP_WORK_DAYS,int EMP_WORK_HOUR);
+    public void computeEmpWage();
+    public int calculateEmployeeWage(CompanyEmpWage companyEmpWage);
+} 
+ 
+ class CompanyEmpWage{
+    
     String company;
     int EMP_RATE_PER_HOUR;
     int EMP_WORK_DAYS;
@@ -15,7 +21,7 @@ class CompanyEmpWage{
     }
 
     public void setTotalWage(int total_wage){
-        this.total_wage = total_wage;
+         this.total_wage = total_wage;
     }
 
     @Override
@@ -25,17 +31,17 @@ class CompanyEmpWage{
 
 }
 
-public class Employee_wage {
+public class Employee_Wage_Oops implements InnerEmployee_Wage_Oops{
     int FULL_TIME_EMP = 1;
-    int PART_TIME_EMP = 2;
+    int PART_TIME_EMP = 2;  
     int EMP_FULLTIME_WORK_HOUR = 8;
     int EMP_PARTTIME_WORK_HOUR = 4;
-
-
+    
+    
     int noOfCompany = 0;
     CompanyEmpWage[] companyEmpWageArray ;
 
-    public Employee_wage(){
+    public Employee_Wage_Oops(){
         companyEmpWageArray = new CompanyEmpWage[5];
     }
 
@@ -78,20 +84,20 @@ public class Employee_wage {
             }
             companyEmpWage.total_wage += emp_wage;
         }
-        return companyEmpWage.total_wage;
+         return companyEmpWage.total_wage;
     }
 
-
+    
 
     public static void main(String[] args) {
 
-        Employee_wage empwage = new Employee_wage();
+        Employee_Wage_Oops empwage = new Employee_Wage_Oops();
         empwage.addCompany("Samsung", 20, 25, 200);
         empwage.addCompany("QualityKiosk", 25, 24, 300);
         empwage.addCompany("Bridgelabz", 30, 25, 250);
         empwage.computeEmpWage();
         // empwage.calculateEmployeeWage(null);
 
-
+        
     }
 }
